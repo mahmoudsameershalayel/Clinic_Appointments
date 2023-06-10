@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FreeAppointmentsController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutY="5.0" prefHeight="620.0" prefWidth="250.0">
+         <children>
+            <VBox layoutY="-5.0" prefHeight="625.0" prefWidth="250.0" style="-fx-background-color: #079999;">
+               <children>
+                  <Label alignment="CENTER" text="Admin Dashboard" textFill="#f2f0f0">
+                     <font>
+                        <Font name="Agency FB Bold" size="35.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="23.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <VBox prefHeight="300.0" prefWidth="250.0" style="-fx-background-color: #079999;">
+                     <VBox.margin>
+                        <Insets top="65.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="patientpagebtn" mnemonicParsing="false" onAction="#patientpagebtnAction" style="-fx-background-color: #079999; -fx-padding: 15; -fx-pref-width: 250; -fx-pref-height: 70;" text="Patient Page" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="freeAppointmentpagebtn" mnemonicParsing="false" onAction="#freeAppointmentpagebtnAction" style="-fx-background-color: #075544; -fx-padding: 15; -fx-pref-width: 250; -fx-pref-height: 70;" text="Free Appointments" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="bookedAppointentpagebtn" mnemonicParsing="false" onAction="#bookedAppointentpagebtnAction" style="-fx-background-color: #079999; -fx-padding: 15; -fx-pref-width: 250; -fx-pref-height: 70;" text="Booked Appointments" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="50.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="250.0" layoutY="5.0" prefHeight="620.0" prefWidth="774.0">
+         <children>
+            <VBox layoutY="-8.0" prefHeight="620.0" prefWidth="774.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="logoutbtn" mnemonicParsing="false" onAction="#logoutbtnAction" style="-fx-background-color: orange; -fx-background-radius: 15;" text="Logout" textFill="#fcfcfc">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <TextField fx:id="searchtxt" style="-fx-pref-height: 44;">
+                           <HBox.margin>
+                              <Insets left="360.0" top="20.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </TextField>
+                        <Button fx:id="searchbtn" mnemonicParsing="false" onAction="#searchbtnAction" style="-fx-background-color: #225599;" text="Search" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" style="-fx-pref-width: 774;" text="Appoitments Information">
+                     <font>
+                        <Font name="Akhbar MT Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TableView prefHeight="351.0" prefWidth="774.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Id" />
+                      <TableColumn prefWidth="180.0" text="Appointment Date" />
+                        <TableColumn prefWidth="206.0" text="Appointment Day" />
+                        <TableColumn minWidth="0.0" prefWidth="179.0" text="Appointment Time" />
+                        <TableColumn minWidth="0.0" prefWidth="133.0" text="Status " />
+                    </columns>
+                  </TableView>
+                  <HBox prefHeight="127.0" prefWidth="774.0">
+                     <children>
+                        <Button fx:id="newAppointmentbtn" mnemonicParsing="false" onAction="#newAppointmentbtnAction" prefHeight="69.0" prefWidth="265.0" style="-fx-background-color: #058833; -fx-background-radius: 20;" text="Create new Appointment" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="allAppointmentbtn" mnemonicParsing="false" onAction="#allAppointmentbtnAction" prefHeight="69.0" prefWidth="239.0" style="-fx-background-color: #058833; -fx-background-radius: 20;" text="Show all Appointment" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="updatebtn" mnemonicParsing="false" onAction="#updatebtnAction" prefHeight="69.0" prefWidth="113.0" style="-fx-background-color: #058833; -fx-background-radius: 20;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="deletebtn" mnemonicParsing="false" onAction="#deletebtnAction" prefHeight="69.0" prefWidth="107.0" style="-fx-background-color: #058833; -fx-background-radius: 20;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
